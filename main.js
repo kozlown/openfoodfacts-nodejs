@@ -52,6 +52,11 @@ class OFF {
     return request(`${this.URL}/code/${barcode}.json`)
       .then(JSON.parse)
   }
+
+  getProductsByLabel (label) {
+    return request(`${this.URL}/label/${label}.json`)
+      .then(JSON.parse)
+  }
 }
 
 module.exports = OFF

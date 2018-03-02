@@ -47,4 +47,9 @@ describe('country', function () {
     const withAPI = await OFFInstance.getProductsByBarcodeBeginning(beginning)
     await test(withAPI, `${worldURL}/code/${beginning}xxxxxx.json`)
   })
+  it(`Should fetch products by label`, async () => {
+    const label = 'utz-certified'
+    const withAPI = await OFFInstance.getProductsByLabel(label)
+    await test(withAPI, `${worldURL}/label/${label}.json`)
+  })
 })
